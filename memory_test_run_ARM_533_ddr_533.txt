@@ -1,0 +1,27 @@
+Memory test
+malloc srcBuf = 02000000
+malloc dstBuf = 03000000
+Testing with L1D and L2 cache enabled
+      1024, 4.781250e-07 seconds, 2141.699510 MB/sec, 9.862499e-07 seconds, 1038.276378 MB/sec, 5.025000e-07 seconds, 2037.811101 MB/sec,
+     32768, 7.784999e-06 seconds, 4209.120424 MB/sec, 1.985437e-05 seconds, 1650.417225 MB/sec, 1.061437e-05 seconds, 3087.134428 MB/sec,
+    131072, 3.083437e-05 seconds, 4250.840498 MB/sec, 6.997687e-05 seconds, 1873.076070 MB/sec, 8.205374e-05 seconds, 1597.392075 MB/sec,
+    262144, 6.155812e-05 seconds, 4258.479608 MB/sec, 1.609706e-04 seconds, 1628.520856 MB/sec, 1.715325e-04 seconds, 1528.246950 MB/sec,
+    524288, 1.229906e-04 seconds, 4262.829301 MB/sec, 6.803456e-04 seconds, 770.620139 MB/sec, 6.050268e-04 seconds, 866.553308 MB/sec,
+   1048576, 2.508581e-04 seconds, 4179.956619 MB/sec, 1.760074e-03 seconds, 595.756899 MB/sec, 1.322612e-03 seconds, 792.807096 MB/sec,
+  10485760, 2.461826e-03 seconds, 4259.342348 MB/sec, 1.801892e-02 seconds, 581.930573 MB/sec, 1.336539e-02 seconds, 784.545596 MB/sec,
+Disabling L2 cache
+      1024, 8.343749e-07 seconds, 1227.266011 MB/sec, 1.636875e-06 seconds, 625.582331 MB/sec, 7.987499e-07 seconds, 1282.003228 MB/sec,
+     32768, 2.517375e-05 seconds, 1301.673469 MB/sec, 4.277250e-05 seconds, 766.099772 MB/sec, 3.469125e-05 seconds, 944.561020 MB/sec,
+    131072, 8.597437e-05 seconds, 1524.547401 MB/sec, 1.688850e-04 seconds, 776.102140 MB/sec, 2.253750e-04 seconds, 581.572978 MB/sec,
+    262144, 1.845225e-04 seconds, 1420.661545 MB/sec, 3.535912e-04 seconds, 741.375868 MB/sec, 4.574737e-04 seconds, 573.025272 MB/sec,
+    524288, 3.919087e-04 seconds, 1337.780899 MB/sec, 6.955443e-04 seconds, 753.780864 MB/sec, 9.144881e-04 seconds, 573.313120 MB/sec,
+   1048576, 8.067356e-04 seconds, 1299.776590 MB/sec, 1.381164e-03 seconds, 759.197166 MB/sec, 1.828644e-03 seconds, 573.417169 MB/sec,
+  10485760, 8.271762e-03 seconds, 1267.657287 MB/sec, 1.372573e-02 seconds, 763.949260 MB/sec, 1.828969e-02 seconds, 573.315471 MB/sec,
+Disable L1 cache
+      1024, 3.005625e-06 seconds, 340.694557 MB/sec, 4.436250e-06 seconds, 230.825602 MB/sec, 4.627500e-06 seconds, 221.285808 MB/sec,
+     32768, 8.483249e-05 seconds, 386.267085 MB/sec, 1.249894e-04 seconds, 262.166304 MB/sec, 1.324950e-04 seconds, 247.315012 MB/sec,
+    131072, 3.382818e-04 seconds, 387.463886 MB/sec, 4.969800e-04 seconds, 263.736991 MB/sec, 5.288943e-04 seconds, 247.822658 MB/sec,
+    262144, 6.761999e-04 seconds, 387.672316 MB/sec, 9.958424e-04 seconds, 263.238434 MB/sec, 1.057112e-03 seconds, 247.981341 MB/sec,
+    524288, 1.352042e-03 seconds, 387.775001 MB/sec, 1.983110e-03 seconds, 264.376598 MB/sec, 2.113925e-03 seconds, 248.016313 MB/sec,
+   1048576, 2.703720e-03 seconds, 387.827171 MB/sec, 3.965132e-03 seconds, 264.449232 MB/sec, 4.227523e-03 seconds, 248.035563 MB/sec,
+  10485760, 2.703395e-02 seconds, 387.873760 MB/sec, 3.963085e-02 seconds, 264.585770 MB/sec, 4.227106e-02 seconds, 248.060043 MB/sec,

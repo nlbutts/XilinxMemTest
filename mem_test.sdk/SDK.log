@@ -1,0 +1,442 @@
+19:07:14 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
+19:07:16 INFO  : XSDB server has started successfully.
+19:07:17 INFO  : Processing command line option -hwspec C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper.hdf.
+19:10:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:10:29 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:10:31 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:10:31 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:10:31 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:10:32 INFO  : 'stop' command is executed.
+19:10:47 INFO  : 'ps7_init' command is executed.
+19:10:47 INFO  : 'con' command is executed.
+19:10:48 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:10:49 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:10:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:10:51 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test2/Debug/mem_test2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:10:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+stop
+ps7_init
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test2/Debug/mem_test2.elf
+----------------End of Script----------------
+
+19:10:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:10:53 INFO  : 'con' command is executed.
+19:10:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:13:55 INFO  : Disconnected from the channel tcfchan#1.
+21:09:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:09:05 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:09:06 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+21:09:06 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:09:07 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+21:09:08 INFO  : 'stop' command is executed.
+21:09:24 INFO  : 'ps7_init' command is executed.
+21:09:24 INFO  : 'con' command is executed.
+21:09:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:09:26 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:09:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:09:27 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:09:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+stop
+ps7_init
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf
+----------------End of Script----------------
+
+21:09:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:09:29 INFO  : 'con' command is executed.
+21:09:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+21:11:35 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1459995092781,  Project:1459987618247
+21:11:35 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+21:11:38 INFO  : Copied contents of C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper.hdf into \design_1_wrapper_hw_platform_0\system.hdf.
+21:11:42 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+21:11:44 INFO  : 
+21:11:45 INFO  : Updating hardware inferred compiler options for mem_test1.
+21:11:46 INFO  : Updating hardware inferred compiler options for mem_test2.
+21:11:46 INFO  : Clearing existing target manager status.
+21:11:47 INFO  : Closing and re-opening the MSS file of ther project bsp
+21:11:49 INFO  : Closing and re-opening the MSS file of ther project bsp
+21:11:49 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+21:12:05 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+21:13:32 INFO  : Disconnected from the channel tcfchan#2.
+21:13:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:13:35 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+21:13:35 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+21:13:36 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+21:13:36 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+21:13:36 INFO  : 'stop' command is executed.
+21:13:57 INFO  : 'ps7_init' command is executed.
+21:13:57 INFO  : 'con' command is executed.
+21:13:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:13:59 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+21:14:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:01 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+21:14:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+stop
+ps7_init
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf
+----------------End of Script----------------
+
+21:14:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+21:14:03 INFO  : 'con' command is executed.
+21:14:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:32:50 INFO  : Disconnected from the channel tcfchan#3.
+19:32:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:32:51 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:32:53 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:32:53 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:32:54 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:32:54 INFO  : 'stop' command is executed.
+19:32:59 INFO  : 'ps7_init' command is executed.
+19:33:00 INFO  : 'con' command is executed.
+19:33:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:01 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:33:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:03 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:33:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+stop
+ps7_init
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf
+----------------End of Script----------------
+
+19:33:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:33:04 INFO  : 'con' command is executed.
+19:33:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:41:40 INFO  : Disconnected from the channel tcfchan#4.
+19:41:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:41:41 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:41:42 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:41:42 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:41:43 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:41:43 INFO  : 'stop' command is executed.
+19:42:00 INFO  : 'ps7_init' command is executed.
+19:42:01 INFO  : 'con' command is executed.
+19:42:01 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:42:02 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:42:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:42:04 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:42:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+stop
+ps7_init
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf
+----------------End of Script----------------
+
+19:42:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:42:06 INFO  : 'con' command is executed.
+19:42:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:42:32 INFO  : Disconnected from the channel tcfchan#5.
+19:42:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:42:32 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:42:33 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:42:34 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:42:34 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:42:34 INFO  : 'stop' command is executed.
+19:42:44 INFO  : 'ps7_init' command is executed.
+19:42:45 INFO  : 'con' command is executed.
+19:42:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:42:46 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:42:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:42:49 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:42:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+stop
+ps7_init
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf
+----------------End of Script----------------
+
+19:42:49 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:42:49 INFO  : 'con' command is executed.
+19:42:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:45:17 INFO  : Disconnected from the channel tcfchan#6.
+19:45:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:45:18 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:45:19 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:45:19 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:45:20 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:45:21 INFO  : 'stop' command is executed.
+19:45:33 INFO  : 'ps7_init' command is executed.
+19:45:33 INFO  : 'con' command is executed.
+19:45:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:45:35 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:45:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:45:35 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:45:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+stop
+ps7_init
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf
+----------------End of Script----------------
+
+19:45:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:45:36 INFO  : 'con' command is executed.
+19:45:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:46:01 INFO  : Disconnected from the channel tcfchan#7.
+19:46:01 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:46:01 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:46:02 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:46:02 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:46:02 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:46:02 INFO  : 'stop' command is executed.
+19:46:17 INFO  : 'ps7_init' command is executed.
+19:46:17 INFO  : 'con' command is executed.
+19:46:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:46:19 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+19:46:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:46:20 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:46:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+stop
+ps7_init
+con
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Debug/mem_test1.elf
+----------------End of Script----------------
+
+19:46:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:46:23 INFO  : 'con' command is executed.
+19:46:23 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:49:16 INFO  : Disconnected from the channel tcfchan#8.
+19:49:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:49:16 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:49:16 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:49:27 INFO  : System reset is completed.
+19:49:30 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:49:31 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:49:34 INFO  : 'ps7_init' command is executed.
+19:49:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:34 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Release/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:49:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -system
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+ps7_init
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Release/mem_test1.elf
+----------------End of Script----------------
+
+19:49:35 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:35 INFO  : 'con' command is executed.
+19:49:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:50:08 INFO  : Disconnected from the channel tcfchan#9.
+19:50:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:50:08 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:50:10 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:50:20 INFO  : System reset is completed.
+19:50:23 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:50:24 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:50:44 INFO  : 'ps7_init' command is executed.
+19:50:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:45 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Release/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:50:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -system
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+ps7_init
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Release/mem_test1.elf
+----------------End of Script----------------
+
+19:50:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:50:45 INFO  : 'con' command is executed.
+19:50:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:53:00 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1460076779443,  Project:1459995092781
+19:53:00 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+19:53:01 INFO  : Copied contents of C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper.hdf into \design_1_wrapper_hw_platform_0\system.hdf.
+19:53:06 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+19:53:10 INFO  : 
+19:53:11 INFO  : Updating hardware inferred compiler options for mem_test1.
+19:53:12 INFO  : Updating hardware inferred compiler options for mem_test2.
+19:53:12 INFO  : Clearing existing target manager status.
+19:53:12 INFO  : Closing and re-opening the MSS file of ther project bsp
+19:53:12 INFO  : Closing and re-opening the MSS file of ther project bsp
+19:53:12 INFO  : Closing and re-opening the MSS file of ther project bsp
+19:53:12 INFO  : Closing and re-opening the MSS file of ther project bsp
+19:53:13 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+19:53:13 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+19:53:42 INFO  : Disconnected from the channel tcfchan#10.
+19:53:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:53:45 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:53:45 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:53:56 INFO  : System reset is completed.
+19:53:59 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:53:59 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:54:20 INFO  : 'ps7_init' command is executed.
+19:54:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:54:22 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Release/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:54:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -system
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+ps7_init
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Release/mem_test1.elf
+----------------End of Script----------------
+
+19:54:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:54:24 INFO  : 'con' command is executed.
+19:54:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+19:56:44 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1460077003373,  Project:1460076779443
+19:56:44 INFO  : Project design_1_wrapper_hw_platform_0's source hardware specification located at C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+19:56:46 INFO  : Copied contents of C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper.hdf into \design_1_wrapper_hw_platform_0\system.hdf.
+19:56:51 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+19:56:54 INFO  : 
+19:56:55 INFO  : Updating hardware inferred compiler options for mem_test1.
+19:56:55 INFO  : Updating hardware inferred compiler options for mem_test2.
+19:56:55 INFO  : Clearing existing target manager status.
+19:56:55 INFO  : Closing and re-opening the MSS file of ther project bsp
+19:56:56 INFO  : Closing and re-opening the MSS file of ther project bsp
+19:56:56 INFO  : Closing and re-opening the MSS file of ther project bsp
+19:56:56 INFO  : Closing and re-opening the MSS file of ther project bsp
+19:56:56 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+19:56:57 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+19:58:44 INFO  : Disconnected from the channel tcfchan#11.
+19:58:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:58:47 INFO  : Sourcing of 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+19:58:47 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:58:57 INFO  : System reset is completed.
+19:59:01 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0' command is executed.
+19:59:01 INFO  : Hardware design information is loaded from 'C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+19:59:32 INFO  : 'ps7_init' command is executed.
+19:59:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:59:36 INFO  : The application 'C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Release/mem_test1.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:59:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+rst -system
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+loadhw C:/projects/xilinx/mem_test/mem_test.sdk/design_1_wrapper_hw_platform_0/system.hdf
+ps7_init
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+dow C:/projects/xilinx/mem_test/mem_test.sdk/mem_test1/Release/mem_test1.elf
+----------------End of Script----------------
+
+19:59:38 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:59:38 INFO  : 'con' command is executed.
+19:59:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248451639"} -index 0
+con
+----------------End of Script----------------
+
+20:02:04 INFO  : Launching XSDB server: xsdb.bat C:/Xilinx/SDK/2015.4/scripts/xsdb/xsdb/xsdb-server.tcl
