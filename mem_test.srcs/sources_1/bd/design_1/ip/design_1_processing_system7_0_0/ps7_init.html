@@ -12689,10 +12689,10 @@ ddrc_ctrl
 <B>1</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Read Transaction Priority disable. 0: read transactions forced to low priority (turns off Bypass). 1: HPR reads allowed if enabled in the AXI priority read registers.</B>
@@ -12732,7 +12732,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Disable DQ</B>
@@ -14245,10 +14245,10 @@ ddrc_ctrl
 <B>7e</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1f</B>
+<B>7</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3e</B>
+<B>e</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Number of entries in the low priority transaction store is this value plus 1. In this design, by default all read ports are treated as low priority and hence the value of 0x1F. The hpr_num_entries is 32 minus this value. Bit [6] is ignored.</B>
@@ -14368,7 +14368,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3e</B>
+<B>e</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Controller 1</B>
@@ -21655,10 +21655,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Write Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -21738,7 +21738,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for write port 0.</B>
@@ -21822,10 +21822,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Write Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -21905,7 +21905,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for write port 0.</B>
@@ -21989,10 +21989,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Write Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -22072,7 +22072,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for write port 0.</B>
@@ -22236,10 +22236,10 @@ ddrc_ctrl
 <B>80000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>80000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Enable reads to be generated as HPR for this Read Port.</B>
@@ -22259,7 +22259,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>803ff</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 0.</B>
@@ -22343,10 +22343,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Read Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -22446,7 +22446,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 0.</B>
@@ -22530,10 +22530,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Read Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -22633,7 +22633,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 0.</B>
@@ -22717,10 +22717,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Read Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -22820,7 +22820,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 0.</B>
@@ -58175,10 +58175,10 @@ ddrc_ctrl
 <B>1</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Read Transaction Priority disable. 0: read transactions forced to low priority (turns off Bypass). 1: HPR reads allowed if enabled in the AXI priority read registers.</B>
@@ -58298,7 +58298,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Disable DQ</B>
@@ -59971,10 +59971,10 @@ ddrc_ctrl
 <B>7e</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1f</B>
+<B>7</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3e</B>
+<B>e</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Number of entries in the low priority transaction store is this value plus 1. In this design, by default all read ports are treated as low priority and hence the value of 0x1F. The hpr_num_entries is 32 minus this value. Bit [6] is ignored.</B>
@@ -60094,7 +60094,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3e</B>
+<B>e</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Controller 1</B>
@@ -67988,10 +67988,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Write Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -68091,7 +68091,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>803ff</B>
+<B>80200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for write port 1.</B>
@@ -68175,10 +68175,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Write Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -68278,7 +68278,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>803ff</B>
+<B>80200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for write port 2.</B>
@@ -68362,10 +68362,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Write Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -68465,7 +68465,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>803ff</B>
+<B>80200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for write port 3.</B>
@@ -68629,10 +68629,10 @@ ddrc_ctrl
 <B>80000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>80000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Enable reads to be generated as HPR for this Read Port.</B>
@@ -68652,7 +68652,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>803ff</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 0.</B>
@@ -68736,10 +68736,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Read Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -68839,7 +68839,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 1.</B>
@@ -68923,10 +68923,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Read Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -69026,7 +69026,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 2.</B>
@@ -69110,10 +69110,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Read Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -69213,7 +69213,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 3.</B>
@@ -104563,10 +104563,10 @@ ddrc_ctrl
 <B>1</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Active Low signal. When asserted (0), all incoming transactions will be forced to low priority. Forcing the incoming transactions to low priority implicitly turns OFF Bypass. Otherwise, HPR is allowed if enabled in the AXI priority read registers.</B>
@@ -104686,7 +104686,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>DRAM Disable DQ register</B>
@@ -106359,10 +106359,10 @@ ddrc_ctrl
 <B>7e</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>1f</B>
+<B>7</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3e</B>
+<B>e</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Number of entries in the low priority transaction store is this value plus 1. In this design, by default all read ports are treated as low priority and hence the value of 0x1F. The hpr_num_entries is 32 minus this value. Bit [6] is ignored.</B>
@@ -106482,7 +106482,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3e</B>
+<B>e</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>Controller register 1</B>
@@ -113802,10 +113802,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Write Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -113905,7 +113905,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>803ff</B>
+<B>80200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for write port 0.</B>
@@ -113989,10 +113989,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Write Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -114092,7 +114092,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>803ff</B>
+<B>80200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for write port 0.</B>
@@ -114176,10 +114176,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Write Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -114279,7 +114279,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>803ff</B>
+<B>80200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for write port 0.</B>
@@ -114443,10 +114443,10 @@ ddrc_ctrl
 <B>80000</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>1</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>0</B>
+<B>80000</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Enable reads to be generated as HPR for this Read Port.</B>
@@ -114466,7 +114466,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>803ff</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 0.</B>
@@ -114550,10 +114550,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Read Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -114653,7 +114653,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 0.</B>
@@ -114737,10 +114737,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Read Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -114840,7 +114840,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 0.</B>
@@ -114924,10 +114924,10 @@ ddrc_ctrl
 <B>3ff</B>
 </TD>
 <TD width=10% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=15% BGCOLOR=#FBF5EF>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#FBF5EF>
 <B>Priority of this Read Port n. Value in this register used to load the aging counters (when respective port request is asserted and grant is generated to that port). These register can be reprogrammed to set priority of each port. Lower the value more will be priority given to the port. For example if 0x82 (port 0) value is set to 'h3FF, and 0x83 (port 1) is set to 'h0FF, and both port0 and port1 have requests, in this case port1 will get high priority and grant will be given to port1.</B>
@@ -115027,7 +115027,7 @@ ddrc_ctrl
 <B></B>
 </TD>
 <TD width=15% BGCOLOR=#C0C0C0>
-<B>3ff</B>
+<B>200</B>
 </TD>
 <TD width=35% BGCOLOR=#C0C0C0>
 <B>AXI Priority control for read port 0.</B>

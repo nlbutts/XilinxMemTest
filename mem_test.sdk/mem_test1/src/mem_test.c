@@ -48,8 +48,6 @@
 #include <stdio.h>
 #include "platform.h"
 
-void print(char *str);
-
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -58,12 +56,28 @@ void print(char *str);
 #include <xtime_l.h>
 #include <xenv_standalone.h>
 #include <xil_cache.h>
+#include <xdmaps.h>
+#include <xscugic.h>
 
 static void * srcBuf;
 static void * dstBuf;
 
-#define BUFFER_ADDR         0x38000000
-#define BUFFER_SIZE         10*1024*1024
+#define BUFFER_ADDR             0x38000000
+#define BUFFER_SIZE             10*1024*1024
+#define TIMEOUT_LIMIT           100000
+#define DMA_DEVICE_ID           XPAR_XDMAPS_1_DEVICE_ID
+#define INTC_DEVICE_ID          XPAR_SCUGIC_SINGLE_DEVICE_ID
+
+#define DMA_DONE_INTR_0         XPAR_XDMAPS_0_DONE_INTR_0
+#define DMA_DONE_INTR_1         XPAR_XDMAPS_0_DONE_INTR_1
+#define DMA_DONE_INTR_2         XPAR_XDMAPS_0_DONE_INTR_2
+#define DMA_DONE_INTR_3         XPAR_XDMAPS_0_DONE_INTR_3
+#define DMA_DONE_INTR_4         XPAR_XDMAPS_0_DONE_INTR_4
+#define DMA_DONE_INTR_5         XPAR_XDMAPS_0_DONE_INTR_5
+#define DMA_DONE_INTR_6         XPAR_XDMAPS_0_DONE_INTR_6
+#define DMA_DONE_INTR_7         XPAR_XDMAPS_0_DONE_INTR_7
+#define DMA_FAULT_INTR          XPAR_XDMAPS_0_FAULT_INTR
+
 
 extern void memcpyasm(void *dst, void *src, uint32_t size);
 
@@ -88,7 +102,7 @@ static void printPerformance(XTime start, XTime stop, uint32_t size, char * msg)
     printf("%s = %f seconds\n", msg, diff);
     throughput = size / diff;
     throughput /= 1000000;
-    printf("Throughput = %f MB/sec\n", throughput);
+    printf("%d bytes copied. Throughput = %f MB/sec\n", size, throughput);
 }
 
 static void calcPerformance(XTime start, XTime stop, uint32_t size, double *time, double *throughput)
@@ -100,6 +114,198 @@ static void calcPerformance(XTime start, XTime stop, uint32_t size, double *time
     *time = diff;
     *throughput = size / diff;
     *throughput /= 1000000;
+}
+
+int SetupInterruptSystem(XScuGic *GicPtr, XDmaPs *DmaPtr)
+{
+    int Status;
+#ifndef TESTAPP_GEN
+    XScuGic_Config *GicConfig;
+
+
+    Xil_ExceptionInit();
+
+    /*
+     * Initialize the interrupt controller driver so that it is ready to
+     * use.
+     */
+    GicConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+    if (NULL == GicConfig) {
+        return XST_FAILURE;
+    }
+
+    Status = XScuGic_CfgInitialize(GicPtr, GicConfig,
+                       GicConfig->CpuBaseAddress);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+
+    /*
+     * Connect the interrupt controller interrupt handler to the hardware
+     * interrupt handling logic in the processor.
+     */
+    Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_IRQ_INT,
+                 (Xil_ExceptionHandler)XScuGic_InterruptHandler,
+                 GicPtr);
+#endif
+    /*
+     * Connect the device driver handlers that will be called when an interrupt
+     * for the device occurs, the device driver handler performs the specific
+     * interrupt processing for the device
+     */
+
+    /*
+     * Connect the Fault ISR
+     */
+    Status = XScuGic_Connect(GicPtr,
+                 DMA_FAULT_INTR,
+                 (Xil_InterruptHandler)XDmaPs_FaultISR,
+                 (void *)DmaPtr);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+
+    /*
+     * Connect the Done ISR for all 8 channels of DMA 0
+     */
+    Status = XScuGic_Connect(GicPtr,
+                 DMA_DONE_INTR_0,
+                 (Xil_InterruptHandler)XDmaPs_DoneISR_0,
+                 (void *)DmaPtr);
+    Status |= XScuGic_Connect(GicPtr,
+                 DMA_DONE_INTR_1,
+                 (Xil_InterruptHandler)XDmaPs_DoneISR_1,
+                 (void *)DmaPtr);
+    Status |= XScuGic_Connect(GicPtr,
+                 DMA_DONE_INTR_2,
+                 (Xil_InterruptHandler)XDmaPs_DoneISR_2,
+                 (void *)DmaPtr);
+    Status |= XScuGic_Connect(GicPtr,
+                 DMA_DONE_INTR_3,
+                 (Xil_InterruptHandler)XDmaPs_DoneISR_3,
+                 (void *)DmaPtr);
+    Status |= XScuGic_Connect(GicPtr,
+                 DMA_DONE_INTR_4,
+                 (Xil_InterruptHandler)XDmaPs_DoneISR_4,
+                 (void *)DmaPtr);
+    Status |= XScuGic_Connect(GicPtr,
+                 DMA_DONE_INTR_5,
+                 (Xil_InterruptHandler)XDmaPs_DoneISR_5,
+                 (void *)DmaPtr);
+    Status |= XScuGic_Connect(GicPtr,
+                 DMA_DONE_INTR_6,
+                 (Xil_InterruptHandler)XDmaPs_DoneISR_6,
+                 (void *)DmaPtr);
+    Status |= XScuGic_Connect(GicPtr,
+                 DMA_DONE_INTR_7,
+                 (Xil_InterruptHandler)XDmaPs_DoneISR_7,
+                 (void *)DmaPtr);
+
+    if (Status != XST_SUCCESS)
+        return XST_FAILURE;
+
+    /*
+     * Enable the interrupts for the device
+     */
+    XScuGic_Enable(GicPtr, DMA_DONE_INTR_0);
+    XScuGic_Enable(GicPtr, DMA_DONE_INTR_1);
+    XScuGic_Enable(GicPtr, DMA_DONE_INTR_2);
+    XScuGic_Enable(GicPtr, DMA_DONE_INTR_3);
+    XScuGic_Enable(GicPtr, DMA_DONE_INTR_4);
+    XScuGic_Enable(GicPtr, DMA_DONE_INTR_5);
+    XScuGic_Enable(GicPtr, DMA_DONE_INTR_6);
+    XScuGic_Enable(GicPtr, DMA_DONE_INTR_7);
+    XScuGic_Enable(GicPtr, DMA_FAULT_INTR);
+
+    Xil_ExceptionEnable();
+
+    return XST_SUCCESS;
+
+}
+
+static void DmaDoneHandler(unsigned int channel, XDmaPs_Cmd * cmd, void * callbackref)
+{
+    int* done = (int*)callbackref;
+    *done = 1;
+}
+
+static void testDMA(uint32_t size)
+{
+    int Status;
+    XScuGic GicPtr;
+    XDmaPs_Cmd DmaCmd;
+    XDmaPs DmaInst;
+    XDmaPs_Config *DmaCfg;
+    int Channel = 0;
+    int Checked = 0;
+    int TimeOutCnt;
+    XTime start;
+    XTime stop;
+
+    memset(&DmaCmd, 0, sizeof(XDmaPs_Cmd));
+
+    DmaCmd.ChanCtrl.SrcBurstSize = 8;
+    DmaCmd.ChanCtrl.SrcBurstLen = 32;
+    DmaCmd.ChanCtrl.SrcInc = 1;
+    DmaCmd.ChanCtrl.DstBurstSize = 8;
+    DmaCmd.ChanCtrl.DstBurstLen = 32;
+    DmaCmd.ChanCtrl.DstInc = 1;
+    DmaCmd.BD.SrcAddr = (u32) srcBuf;
+    DmaCmd.BD.DstAddr = (u32) dstBuf;
+    DmaCmd.BD.Length = size;
+
+    /*
+     * Initialize the DMA Driver
+     */
+    DmaCfg = XDmaPs_LookupConfig(XPAR_PS7_DMA_S_DEVICE_ID);
+    if (DmaCfg == NULL) {
+        printf("Error finding DMA\n");
+    }
+
+    Status = XDmaPs_CfgInitialize(&DmaInst,
+                   DmaCfg,
+                   DmaCfg->BaseAddress);
+    if (Status != XST_SUCCESS) {
+        printf("Error configuring the DMA\n");
+    }
+
+
+    /*
+     * Setup the interrupt system.
+     */
+    Status = SetupInterruptSystem(&GicPtr, &DmaInst);
+    if (Status != XST_SUCCESS) {
+        printf("Failed to configure interrupts\n");
+    }
+
+    memset(dstBuf, 0, size);
+
+    XDmaPs_SetDoneHandler(&DmaInst,
+                   Channel,
+                   DmaDoneHandler,
+                   (void *)&Checked);
+
+
+    XTime_GetTime(&start);
+    Status = XDmaPs_Start(&DmaInst, Channel, &DmaCmd, 0);
+    if (Status != XST_SUCCESS) {
+        printf("Failed to start DMA\n");
+    }
+
+    TimeOutCnt = 0;
+
+    /* Now the DMA is done */
+    while (!Checked
+           && TimeOutCnt < (TIMEOUT_LIMIT)) {
+        TimeOutCnt++;
+        usleep(1);
+    }
+
+    XTime_GetTime(&stop);
+    if (TimeOutCnt >= TIMEOUT_LIMIT) {
+        printf("DMA took too long\n");
+    }
+    printPerformance(start, stop, size, "DMA Transfer");
 }
 
 /**
@@ -176,37 +382,45 @@ int main()
 
     if (requestDmaMem() >= 0)
     {
-        printf("Testing with L1D and L2 cache enabled\n");
-        performMemoryTest(1024);
-        performMemoryTest(1024*32);
-        performMemoryTest(1024*128);
-        performMemoryTest(1024*256);
-        performMemoryTest(1024*512);
-        performMemoryTest(1024*1024);
-        performMemoryTest(1024*1024*10);
+    	while (1)
+    	{
+			printf("Testing with L1D and L2 cache enabled\n");
+    		Xil_L1DCacheEnable();
+    		Xil_L2CacheEnable();
+			performMemoryTest(1024);
+			performMemoryTest(1024*32);
+			performMemoryTest(1024*128);
+			performMemoryTest(1024*256);
+			performMemoryTest(1024*512);
+			performMemoryTest(1024*1024);
+			performMemoryTest(1024*1024*10);
+			testDMA(1024*1024);
+			testDMA(1024*1024*10);
 
-        printf("Disabling L2 cache\n");
-        Xil_L2CacheDisable();
+			printf("Disabling L2 cache\n");
+			Xil_L2CacheDisable();
 
-        performMemoryTest(1024);
-        performMemoryTest(1024*32);
-        performMemoryTest(1024*128);
-        performMemoryTest(1024*256);
-        performMemoryTest(1024*512);
-        performMemoryTest(1024*1024);
-        performMemoryTest(1024*1024*10);
+			performMemoryTest(1024);
+			performMemoryTest(1024*32);
+			performMemoryTest(1024*128);
+			performMemoryTest(1024*256);
+			performMemoryTest(1024*512);
+			performMemoryTest(1024*1024);
+			performMemoryTest(1024*1024*10);
+			testDMA(1024*1024*10);
 
-        printf("Disable L1 cache\n");
-        Xil_L1DCacheDisable();
+			printf("Disable L1 cache\n");
+			Xil_L1DCacheDisable();
 
-        performMemoryTest(1024);
-        performMemoryTest(1024*32);
-        performMemoryTest(1024*128);
-        performMemoryTest(1024*256);
-        performMemoryTest(1024*512);
-        performMemoryTest(1024*1024);
-        performMemoryTest(1024*1024*10);
-
+			performMemoryTest(1024);
+			performMemoryTest(1024*32);
+			performMemoryTest(1024*128);
+			performMemoryTest(1024*256);
+			performMemoryTest(1024*512);
+			performMemoryTest(1024*1024);
+			performMemoryTest(1024*1024*10);
+			testDMA(1024*1024*10);
+    	}
     }
     freeDmaMem();
 

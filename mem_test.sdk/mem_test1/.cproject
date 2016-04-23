@@ -94,12 +94,12 @@
 								<inputType id="xilinx.gnu.assembler.input.515778341" superClass="xilinx.gnu.assembler.input"/>
 							</tool>
 							<tool id="xilinx.gnu.arm.c.toolchain.compiler.release.1222964488" name="ARM gcc compiler" superClass="xilinx.gnu.arm.c.toolchain.compiler.release">
-								<option defaultValue="gnu.c.optimization.level.more" id="xilinx.gnu.compiler.option.optimization.level.1073327614" name="Optimization Level" superClass="xilinx.gnu.compiler.option.optimization.level" valueType="enumerated"/>
+								<option defaultValue="gnu.c.optimization.level.more" id="xilinx.gnu.compiler.option.optimization.level.1073327614" name="Optimization Level" superClass="xilinx.gnu.compiler.option.optimization.level" value="gnu.c.optimization.level.most" valueType="enumerated"/>
 								<option id="xilinx.gnu.compiler.option.debugging.level.2027331734" name="Debug Level" superClass="xilinx.gnu.compiler.option.debugging.level" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="xilinx.gnu.compiler.inferred.swplatform.includes.2054214542" name="Software Platform Include Path" superClass="xilinx.gnu.compiler.inferred.swplatform.includes" valueType="includePath">
 									<listOptionValue builtIn="false" value="../../bsp/ps7_cortexa9_0/include"/>
 								</option>
-								<option id="xilinx.gnu.compiler.misc.other.317344918" superClass="xilinx.gnu.compiler.misc.other" value="-c -fmessage-length=0 -MT&quot;$@&quot; -std=c99" valueType="string"/>
+								<option id="xilinx.gnu.compiler.misc.other.317344918" name="Other flags" superClass="xilinx.gnu.compiler.misc.other" value="-c -fmessage-length=0 -MT&quot;$@&quot; -std=c99" valueType="string"/>
 								<inputType id="xilinx.gnu.arm.c.compiler.input.1235331888" name="C source files" superClass="xilinx.gnu.arm.c.compiler.input"/>
 							</tool>
 							<tool id="xilinx.gnu.arm.cxx.toolchain.compiler.release.917639259" name="ARM g++ compiler" superClass="xilinx.gnu.arm.cxx.toolchain.compiler.release">
